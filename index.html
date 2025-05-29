@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pterodactyl Panel - Customer FAQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation Header -->
+    <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Pterodactyl Panel FAQ</h1>
+                </div>
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Introduction -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Welcome to Pterodactyl Panel</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                This comprehensive FAQ will guide you through creating, configuring, and managing your game servers using the Pterodactyl Panel. 
+                Whether you're setting up Minecraft, FiveM, or other game servers, you'll find detailed instructions here.
+            </p>
+            <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                <p class="text-blue-800 dark:text-blue-200">
+                    <strong>Quick Tip:</strong> Use the search function (Ctrl+F) to quickly find specific topics or game types.
+                </p>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Table of Contents</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">Getting Started</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Panel Basics</li>
+                        <li>• Creating Your First Server</li>
+                        <li>• File Management</li>
+                    </ul>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">Game Servers</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Minecraft</li>
+                        <li>• FiveM</li>
+                        <li>• CS:GO/CS2</li>
+                        <li>• Garry's Mod</li>
+                    </ul>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">Advanced Topics</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                        <li>• Troubleshooting</li>
+                        <li>• Performance Optimization</li>
+                        <li>• Security</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Getting Started</h2>
+            
+            <div id="accordion-getting-started" data-accordion="collapse">
+                <!-- Panel Basics -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-getting-started-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-getting-started-body-1" aria-expanded="false" aria-controls="accordion-getting-started-body-1">
+                            <span>How do I access my Pterodactyl Panel?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-getting-started-body-1" class="hidden" aria-labelledby="accordion-getting-started-heading-1">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Your hosting provider will give you access details including:
+                            </p>
+                            <ul class="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-2">
+                                <li><strong>Panel URL:</strong> Usually something like https://panel.yourhost.com</li>
+                                <li><strong>Username/Email:</strong> Your login credentials</li>
+                                <li><strong>Password:</strong> Your account password</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded-lg">
+                                <p class="text-yellow-800 dark:text-yellow-200">
+                                    <strong>Important:</strong> Always change the default password after your first login for security.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creating First Server -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-getting-started-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-getting-started-body-2" aria-expanded="false" aria-controls="accordion-getting-started-body-2">
+                            <span>How do I create my first server?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-getting-started-body-2" class="hidden" aria-labelledby="accordion-getting-started-heading-2">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Step 1: Navigate to Server Creation</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        From your dashboard, look for a "Create Server" or "+" button. This is usually prominently displayed.
+                                    </p>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Step 2: Choose Server Type</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Select the appropriate egg/template for your game:
+                                    </p>
+                                    <ul class="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
+                                        <li>Minecraft (Java/Bedrock)</li>
+                                        <li>FiveM</li>
+                                        <li>Counter-Strike</li>
+                                        <li>Generic (for custom applications)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Step 3: Configure Basic Settings</h4>
+                                    <ul class="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-1">
+                                        <li><strong>Server Name:</strong> Choose a descriptive name</li>
+                                        <li><strong>Memory:</strong> Allocate RAM based on your plan</li>
+                                        <li><strong>Disk Space:</strong> Set storage limits</li>
+                                        <li><strong>CPU:</strong> Set processing power limits</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Management -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-getting-started-heading-3">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-getting-started-body-3" aria-expanded="false" aria-controls="accordion-getting-started-body-3">
+                            <span>How do I manage files on my server?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-getting-started-body-3" class="hidden" aria-labelledby="accordion-getting-started-heading-3">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-4">
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    The file manager is your primary tool for uploading, editing, and organizing server files.
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Basic Operations</h4>
+                                        <ul class="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>Upload files via drag & drop</li>
+                                            <li>Edit text files directly in browser</li>
+                                            <li>Create new folders and files</li>
+                                            <li>Download files to your computer</li>
+                                            <li>Set file permissions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Advanced Features</h4>
+                                        <ul class="list-disc pl-6 text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>Archive extraction (.zip, .tar.gz)</li>
+                                            <li>Mass file operations</li>
+                                            <li>File search functionality</li>
+                                            <li>Backup and restore</li>
+                                            <li>Version control for configs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Minecraft Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Minecraft Servers</h2>
+            
+            <div id="accordion-minecraft" data-accordion="collapse">
+                <!-- Minecraft Setup -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-minecraft-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-minecraft-body-1" aria-expanded="false" aria-controls="accordion-minecraft-body-1">
+                            <span>How do I set up a Minecraft server?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-minecraft-body-1" class="hidden" aria-labelledby="accordion-minecraft-heading-1">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-6">
+                                <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-800 dark:text-green-200 mb-2">Server Type Selection</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-green-800 dark:text-green-200">Vanilla Minecraft</h5>
+                                            <p class="text-green-700 dark:text-green-300 text-sm">Official Minecraft server software</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-green-800 dark:text-green-200">Paper/Spigot</h5>
+                                            <p class="text-green-700 dark:text-green-300 text-sm">Enhanced performance with plugin support</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-green-800 dark:text-green-200">Forge/Fabric</h5>
+                                            <p class="text-green-700 dark:text-green-300 text-sm">Mod support for client-side modifications</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-green-800 dark:text-green-200">Bedrock Edition</h5>
+                                            <p class="text-green-700 dark:text-green-300 text-sm">Cross-platform compatibility</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Step-by-Step Setup</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">1</span>
+                                            <div>
+                                                <p class="font-medium text-gray-900 dark:text-white">Create Server</p>
+                                                <p class="text-gray-600 dark:text-gray-300 text-sm">Select "Minecraft Java" egg and configure resources</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
+                                            <div>
+                                                <p class="font-medium text-gray-900 dark:text-white">Accept EULA</p>
+                                                <p class="text-gray-600 dark:text-gray-300 text-sm">Edit eula.txt file and change "false" to "true"</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
+                                            <div>
+                                                <p class="font-medium text-gray-900 dark:text-white">Configure server.properties</p>
+                                                <p class="text-gray-600 dark:text-gray-300 text-sm">Set server name, difficulty, game mode, etc.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">4</span>
+                                            <div>
+                                                <p class="font-medium text-gray-900 dark:text-white">Start Server</p>
+                                                <p class="text-gray-600 dark:text-gray-300 text-sm">Click the start button and monitor console output</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Memory Allocation Guidelines</h4>
+                                    <ul class="list-disc pl-6 text-yellow-700 dark:text-yellow-300 space-y-1">
+                                        <li><strong>1-5 players:</strong> 2GB RAM minimum</li>
+                                        <li><strong>5-15 players:</strong> 4GB RAM recommended</li>
+                                        <li><strong>15-30 players:</strong> 6-8GB RAM</li>
+                                        <li><strong>30+ players:</strong> 8GB+ RAM with optimization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minecraft Plugins -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-minecraft-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-minecraft-body-2" aria-expanded="false" aria-controls="accordion-minecraft-body-2">
+                            <span>How do I install plugins and mods?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-minecraft-body-2" class="hidden" aria-labelledby="accordion-minecraft-heading-2">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-purple-50 dark:bg-purple-900 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                                        <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-3">Installing Plugins (Spigot/Paper)</h4>
+                                        <ol class="list-decimal pl-6 text-purple-700 dark:text-purple-300 space-y-2">
+                                            <li>Download plugin .jar file from trusted sources</li>
+                                            <li>Upload to the /plugins/ folder</li>
+                                            <li>Restart server or use /reload command</li>
+                                            <li>Configure plugin settings in /plugins/[plugin-name]/</li>
+                                        </ol>
+                                        <div class="mt-3 p-2 bg-purple-100 dark:bg-purple-800 rounded">
+                                            <p class="text-purple-800 dark:text-purple-200 text-sm">
+                                                <strong>Popular Sources:</strong> SpigotMC, Bukkit, GitHub
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">Installing Mods (Forge/Fabric)</h4>
+                                        <ol class="list-decimal pl-6 text-blue-700 dark:text-blue-300 space-y-2">
+                                            <li>Ensure server is running Forge/Fabric</li>
+                                            <li>Download compatible mod .jar files</li>
+                                            <li>Upload to the /mods/ folder</li>
+                                            <li>Restart server to load mods</li>
+                                        </ol>
+                                        <div class="mt-3 p-2 bg-blue-100 dark:bg-blue-800 rounded">
+                                            <p class="text-blue-800 dark:text-blue-200 text-sm">
+                                                <strong>Popular Sources:</strong> CurseForge, Modrinth
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Essential Plugins Recommendations</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 dark:text-white">Administration</h5>
+                                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                                <li>• LuckPerms (permissions)</li>
+                                                <li>• EssentialsX (commands)</li>
+                                                <li>• WorldEdit (building)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 dark:text-white">Protection</h5>
+                                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                                <li>• WorldGuard (region protection)</li>
+                                                <li>• GriefPrevention (claims)</li>
+                                                <li>• CoreProtect (logging)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 dark:text-white">Economy</h5>
+                                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                                <li>• Vault (economy API)</li>
+                                                <li>• ChestShop (player shops)</li>
+                                                <li>• QuickShop (shop plugin)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FiveM Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">FiveM Servers</h2>
+            
+            <div id="accordion-fivem" data-accordion="collapse">
+                <!-- FiveM Setup -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-fivem-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-fivem-body-1" aria-expanded="false" aria-controls="accordion-fivem-body-1">
+                            <span>How do I set up a FiveM server?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-fivem-body-1" class="hidden" aria-labelledby="accordion-fivem-heading-1">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-6">
+                                <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-red-800 dark:text-red-200 mb-2">Prerequisites</h4>
+                                    <ul class="list-disc pl-6 text-red-700 dark:red-300 space-y-1">
+                                        <li>FiveM license key (required for public servers)</li>
+                                        <li>Steam API key (for Steam integration)</li>
+                                        <li>Discord webhook (optional but recommended)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Server Configuration</h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 dark:text-white">1. Server.cfg Setup</h5>
+                                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-2">Edit your server.cfg file with these essential settings:</p>
+                                            <div class="bg-gray-900 dark:bg-gray-800 p-3 rounded text-green-400 text-sm font-mono">
+                                                <div># Basic Settings</div>
+                                                <div>endpoint_add_tcp "0.0.0.0:30120"</div>
+                                                <div>endpoint_add_udp "0.0.0.0:30120"</div>
+                                                <div>sv_hostname "Your Server Name"</div>
+                                                <div>sv_maxclients 32</div>
+                                                <div>sv_licenseKey "your_license_key_here"</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 dark:text-white">2. Resource Management</h5>
+                                            <p class="text-gray-600 dark:text-gray-300 text-sm">Add resources to your server.cfg:</p>
+                                            <div class="bg-gray-900 dark:bg-gray-800 p-3 rounded text-green-400 text-sm font-mono">
+                                                <div># Essential Resources</div>
+                                                <div>start mapmanager</div>
+                                                <div>start chat</div>
+                                                <div>start spawnmanager</div>
+                                                <div>start sessionmanager</div>
+                                                <div>start basic-gamemode</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Resource Installation</h4>
+                                    <ol class="list-decimal pl-6 text-blue-700 dark:text-blue-300 space-y-2">
+                                        <li>Download resources from trusted sources (FiveM forums, GitHub)</li>
+                                        <li>Extract to /resources/ folder</li>
+                                        <li>Add "start [resource-name]" to server.cfg</li>
+                                        <li>Restart server to load new resources</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FiveM Resources -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-fivem-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-fivem-body-2" aria-expanded="false" aria-controls="accordion-fivem-body-2">
+                            <span>What are the best FiveM resources for roleplay?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-fivem-body-2" class="hidden" aria-labelledby="accordion-fivem-heading-2">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Essential Framework</h4>
+                                    <ul class="text-green-700 dark:text-green-300 space-y-2">
+                                        <li><strong>ESX:</strong> Complete RP framework</li>
+                                        <li><strong>QB-Core:</strong> Modern alternative to ESX</li>
+                                        <li><strong>vRP:</strong> Advanced roleplay system</li>
+                                        <li><strong>ox_core:</strong> Lightweight framework</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">Jobs & Economy</h4>
+                                    <ul class="text-blue-700 dark:text-blue-300 space-y-2">
+                                        <li><strong>esx_jobs:</strong> Various job systems</li>
+                                        <li><strong>esx_banking:</strong> Banking system</li>
+                                        <li><strong>esx_shops:</strong> Player shops</li>
+                                        <li><strong>esx_property:</strong> Real estate</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-purple-50 dark:bg-purple-900 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-800 dark:text-purple-200 mb-3">Vehicles & Garage</h4>
+                                    <ul class="text-purple-700 dark:text-purple-300 space-y-2">
+                                        <li><strong>esx_vehicleshop:</strong> Car dealerships</li>
+                                        <li><strong>esx_garage:</strong> Vehicle storage</li>
+                                        <li><strong>LegacyFuel:</strong> Fuel system</li>
+                                        <li><strong>esx_mechanicjob:</strong> Repair shops</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-3">Emergency Services</h4>
+                                    <ul class="text-yellow-700 dark:text-yellow-300 space-y-2">
+                                        <li><strong>esx_policejob:</strong> Police systems</li>
+                                        <li><strong>esx_ambulancejob:</strong> EMS/Medical</li>
+                                        <li><strong>esx_jail:</strong> Prison system</li>
+                                        <li><strong>esx_drugs:</strong> Drug systems</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3">Administration</h4>
+                                    <ul class="text-red-700 dark:text-red-300 space-y-2">
+                                        <li><strong>EasyAdmin:</strong> Admin panel</li>
+                                        <li><strong>txAdmin:</strong> Server management</li>
+                                        <li><strong>ox_lib:</strong> Utility library</li>
+                                        <li><strong>screenshot-basic:</strong> Screenshots</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-indigo-50 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-indigo-800 dark:text-indigo-200 mb-3">Quality of Life</h4>
+                                    <ul class="text-indigo-700 dark:text-indigo-300 space-y-2">
+                                        <li><strong>ox_inventory:</strong> Advanced inventory</li>
+                                        <li><strong>pma-voice:</strong> Voice chat</li>
+                                        <li><strong>InteractSound:</strong> Sound system</li>
+                                        <li><strong>mythic_notify:</strong> Notifications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Troubleshooting</h2>
+            
+            <div id="accordion-troubleshooting" data-accordion="collapse">
+                <!-- Common Issues -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-troubleshooting-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-troubleshooting-body-1" aria-expanded="false" aria-controls="accordion-troubleshooting-body-1">
+                            <span>My server won't start - what should I check?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-troubleshooting-body-1" class="hidden" aria-labelledby="accordion-troubleshooting-heading-1">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-4">
+                                <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3">Common Startup Issues</h4>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <h5 class="font-medium text-red-800 dark:text-red-200">1. Check Console Logs</h5>
+                                            <p class="text-red-700 dark:text-red-300 text-sm">Look for error messages in the console tab - they usually indicate the exact problem.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-red-800 dark:text-red-200">2. Verify EULA Acceptance</h5>
+                                            <p class="text-red-700 dark:text-red-300 text-sm">For Minecraft servers, ensure eula.txt contains "eula=true".</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-red-800 dark:text-red-200">3. Check Resource Allocation</h5>
+                                            <p class="text-red-700 dark:text-red-300 text-sm">Ensure sufficient RAM and disk space are allocated.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-red-800 dark:text-red-200">4. Configuration File Syntax</h5>
+                                            <p class="text-red-700 dark:text-red-300 text-sm">Check for typos or formatting errors in config files.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Quick Diagnostic Steps</h4>
+                                    <ol class="list-decimal pl-6 text-yellow-700 dark:text-yellow-300 space-y-1">
+                                        <li>Check if server files exist and aren't corrupted</li>
+                                        <li>Verify Java version compatibility (for Minecraft)</li>
+                                        <li>Test with minimal configuration</li>
+                                        <li>Check port availability and firewall settings</li>
+                                        <li>Review recent file changes</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Issues -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-troubleshooting-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-troubleshooting-body-2" aria-expanded="false" aria-controls="accordion-troubleshooting-body-2">
+                            <span>How do I fix server lag and performance issues?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-troubleshooting-body-2" class="hidden" aria-labelledby="accordion-troubleshooting-heading-2">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">Minecraft Optimization</h4>
+                                    <ul class="text-blue-700 dark:text-blue-300 space-y-2">
+                                        <li><strong>Use Paper/Purpur:</strong> Better performance than Spigot</li>
+                                        <li><strong>Optimize server.properties:</strong> Reduce view distance, entity limits</li>
+                                        <li><strong>Install optimization plugins:</strong> LimitPillagers, EntityCleaner</li>
+                                        <li><strong>Regular world maintenance:</strong> Use WorldBorder, prune chunks</li>
+                                        <li><strong>JVM flags:</strong> Use Aikar's flags for better garbage collection</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">FiveM Optimization</h4>
+                                    <ul class="text-green-700 dark:text-green-300 space-y-2">
+                                        <li><strong>Resource management:</strong> Remove unused resources</li>
+                                        <li><strong>Optimize scripts:</strong> Use ox_lib for better performance</li>
+                                        <li><strong>Database optimization:</strong> Index frequently queried columns</li>
+                                        <li><strong>Limit OneSync:</strong> Use appropriate OneSync level</li>
+                                        <li><strong>Monitor resource usage:</strong> Use resmon to identify heavy resources</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-900 dark:text-white mb-3">General Performance Tips</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div>
+                                        <h5 class="font-medium text-gray-900 dark:text-white">Resource Management</h5>
+                                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>• Monitor CPU and RAM usage</li>
+                                            <li>• Use SSD storage when possible</li>
+                                            <li>• Regular restarts to clear memory</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900 dark:text-white">Network Optimization</h5>
+                                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>• Choose nearby server locations</li>
+                                            <li>• Optimize network buffer sizes</li>
+                                            <li>• Use proper compression settings</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900 dark:text-white">Maintenance</h5>
+                                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>• Regular file cleanup</li>
+                                            <li>• Update software regularly</li>
+                                            <li>• Monitor error logs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Security & Best Practices</h2>
+            
+            <div id="accordion-security" data-accordion="collapse">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-4">
+                    <h3 id="accordion-security-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700" data-accordion-target="#accordion-security-body-1" aria-expanded="false" aria-controls="accordion-security-body-1">
+                            <span>How do I secure my server?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div id="accordion-security-body-1" class="hidden" aria-labelledby="accordion-security-heading-1">
+                        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <div class="space-y-6">
+                                <div class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-lg p-4">
+                                    <h4 class="font-semibold text-red-800 dark:text-red-200 mb-3">Critical Security Measures</h4>
+                                    <ul class="list-disc pl-6 text-red-700 dark:text-red-300 space-y-2">
+                                        <li><strong>Change default passwords:</strong> Update all default credentials immediately</li>
+                                        <li><strong>Use strong passwords:</strong> Complex passwords with special characters</li>
+                                        <li><strong>Enable 2FA:</strong> Two-factor authentication when available</li>
+                                        <li><strong>Regular backups:</strong> Automated daily backups to secure locations</li>
+                                        <li><strong>Keep software updated:</strong> Regular updates for security patches</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
+                                        <h4 class="font-semibold text-blue-800 dark:text-blue-200 mb-3">Access Control</h4>
+                                        <ul class="text-blue-700 dark:text-blue-300 space-y-2">
+                                            <li>• Whitelist trusted IP addresses</li>
+                                            <li>• Use permission-based systems</li>
+                                            <li>• Limit admin privileges</li>
+                                            <li>• Regular permission audits</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                                        <h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Monitoring</h4>
+                                        <ul class="text-green-700 dark:text-green-300 space-y-2">
+                                            <li>• Enable detailed logging</li>
+                                            <li>• Monitor console for suspicious activity</li>
+                                            <li>• Set up alerts for unusual behavior</li>
+                                            <li>• Regular security scans</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need More Help?</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                If you couldn't find the answer to your question, don't hesitate to reach out for support.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                    📧 Support Tickets
+                </span>
+                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                    💬 Discord Community
+                </span>
+                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                    📚 Documentation
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script>
+        // Dark mode toggle functionality
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Change the icons inside the button based on previous settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+
+            // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
